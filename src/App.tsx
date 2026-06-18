@@ -77,6 +77,26 @@ const BACKGROUND_FADE_START = Math.max(
 );
 
 
+type BirthdayCardConfig = {
+  id: string;
+  image: string;
+  position: [number, number, number];
+  rotation: [number, number, number];
+};
+
+const TYPED_LINES = [
+  "> هييييي توينننن",
+  "...",
+  "> بذراع مالحق جوان *-*",
+  "...",
+  "> HAAAPYYY BIRTH DAY TO YOU TWINNNN",
+  "...",
+  "٩(◕‿◕)۶ ٩(◕‿◕)۶ ٩(◕‿◕)۶"
+];
+const TYPED_CHAR_DELAY = 100;
+const POST_TYPING_SCENE_DELAY = 1000;
+const CURSOR_BLINK_INTERVAL = 480;
+
 const BIRTHDAY_CARDS: ReadonlyArray<BirthdayCardConfig> = [
   {
     id: "confetti",
