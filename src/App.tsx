@@ -504,8 +504,23 @@ export default function App() {
       }
     };
 
+    const handleClick = () => {
+      if (!hasStarted) {
+        playBackgroundMusic();
+        setHasStarted(true);
+        return;
+      }
+      if (hasAnimationCompleted && isCandleLit) {
+        setIsCandleLit(false);
+        setFireworksActive(true);
+      }
+    };
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener("click", handleClick);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("click", handleClick);
+    };
   }, [hasStarted, hasAnimationCompleted, isCandleLit, playBackgroundMusic]);
 
   const handleCardToggle = useCallback((id: string) => {
